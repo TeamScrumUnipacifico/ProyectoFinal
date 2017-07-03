@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/07/2017 04:06:34 PM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="com.reservapp.entrega.modelo.Factura" table="factura" catalog="reservapp" optimistic-lock="version">
+        <id name="codigoFactura" type="java.lang.Integer">
+            <column name="CodigoFactura" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="reserva" class="com.reservapp.entrega.modelo.Reserva" fetch="select">
+            <column name="CodigoReserva" not-null="true" />
+        </many-to-one>
+        <property name="metodoPago" type="java.lang.String">
+            <column name="MetodoPago" length="45" />
+        </property>
+        <property name="valorTotal" type="java.lang.Float">
+            <column name="ValorTotal" precision="12" scale="0" />
+        </property>
+        <property name="estadoPago" type="java.lang.String">
+            <column name="EstadoPago" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9/07/2017 10:36:48 AM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="com.reservappfinal.entrega.modelo.Usuario" table="usuario" catalog="reservapp" optimistic-lock="version">
+        <id name="documento" type="java.lang.String">
+            <column name="documento" length="15" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="rol" class="com.reservappfinal.entrega.modelo.Rol" fetch="select">
+            <column name="rol_codigodelRol" />
+        </many-to-one>
+        <property name="correo" type="java.lang.String">
+            <column name="Correo" length="45" />
+        </property>
+        <property name="contrasena" type="java.lang.String">
+            <column name="Contrasena" length="45" />
+        </property>
+        <property name="nombre" type="java.lang.String">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="apellido" type="java.lang.String">
+            <column name="Apellido" length="45" not-null="true" />
+        </property>
+        <property name="telefono" type="java.lang.String">
+            <column name="Telefono" length="45" />
+        </property>
+        <property name="direccion" type="java.lang.String">
+            <column name="Direccion" length="45" />
+        </property>
+        <property name="sexo" type="java.lang.String">
+            <column name="Sexo" length="10" />
+        </property>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Documento" length="15" not-null="true" />
+            </key>
+            <one-to-many class="com.reservappfinal.entrega.modelo.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

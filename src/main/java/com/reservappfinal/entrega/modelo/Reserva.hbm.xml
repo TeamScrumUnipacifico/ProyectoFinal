@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9/07/2017 10:36:48 AM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="com.reservappfinal.entrega.modelo.Reserva" table="reserva" catalog="reservapp" optimistic-lock="version">
+        <id name="codigoReserva" type="java.lang.Integer">
+            <column name="CodigoReserva" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mesa" class="com.reservappfinal.entrega.modelo.Mesa" fetch="select">
+            <column name="CodigoMesa" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.reservappfinal.entrega.modelo.Usuario" fetch="select">
+            <column name="Documento" length="15" not-null="true" />
+        </many-to-one>
+        <property name="usuarioIdUsuario" type="java.lang.Integer">
+            <column name="Usuario_idUsuario" not-null="true" />
+        </property>
+        <property name="fechaReserva" type="java.util.Date">
+            <column name="`Fecha Reserva`" length="10" />
+        </property>
+        <property name="idMesa" type="java.lang.Integer">
+            <column name="IdMesa" />
+        </property>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CodigoReserva" not-null="true" />
+            </key>
+            <one-to-many class="com.reservappfinal.entrega.modelo.Factura" />
+        </set>
+        <set name="ordens" table="orden" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="reserva_CodigoReserva" not-null="true" />
+            </key>
+            <one-to-many class="com.reservappfinal.entrega.modelo.Orden" />
+        </set>
+    </class>
+</hibernate-mapping>

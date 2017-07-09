@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9/07/2017 10:36:48 AM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="com.reservappfinal.entrega.modelo.Mesa" table="mesa" catalog="reservapp" optimistic-lock="version">
+        <id name="codigoMesa" type="java.lang.Integer">
+            <column name="CodigoMesa" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="establecimiento" class="com.reservappfinal.entrega.modelo.Establecimiento" fetch="select">
+            <column name="codigoEstablecimiento" not-null="true" />
+        </many-to-one>
+        <property name="puestos" type="java.lang.Integer">
+            <column name="Puestos" not-null="true" />
+        </property>
+        <property name="ubicacion" type="java.lang.String">
+            <column name="Ubicacion" length="45" />
+        </property>
+        <property name="estado" type="java.lang.String">
+            <column name="Estado" />
+        </property>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CodigoMesa" not-null="true" />
+            </key>
+            <one-to-many class="com.reservappfinal.entrega.modelo.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

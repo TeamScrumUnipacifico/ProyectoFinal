@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9/07/2017 10:36:48 AM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="com.reservappfinal.entrega.modelo.Menu" table="menu" catalog="reservapp" optimistic-lock="version">
+        <id name="codigoMenu" type="java.lang.Integer">
+            <column name="CodigoMenu" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="establecimiento" class="com.reservappfinal.entrega.modelo.Establecimiento" fetch="select">
+            <column name="CodigoEstablecimiento" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="java.lang.String">
+            <column name="Nombre" length="45" not-null="true" />
+        </property>
+        <property name="precio" type="java.lang.Integer">
+            <column name="Precio" not-null="true" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="Descripcion" length="45" />
+        </property>
+        <property name="imagen" type="java.lang.String">
+            <column name="Imagen" length="45" />
+        </property>
+        <property name="estado" type="java.lang.Integer">
+            <column name="estado" />
+        </property>
+        <set name="ordens" table="orden" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="menu_CodigoMenu" not-null="true" />
+            </key>
+            <one-to-many class="com.reservappfinal.entrega.modelo.Orden" />
+        </set>
+    </class>
+</hibernate-mapping>

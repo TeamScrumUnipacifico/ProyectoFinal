@@ -9,9 +9,13 @@
     <http auto-config="true" >
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login.xhtml" access="permitAll" />
-        <intercept-url pattern="/XHTML/**" access="hasRole('ROLE_ADMINISTRADOR')" />
+        <intercept-url pattern="/XHTML/**" access="hasRole('ROLE_ADMINISTRADOR') or hasRole('ROLE_GERENTE') or hasRole('ROLE_USUARIO_FINAL')" />
         
         <intercept-url pattern="/administrador/**" access="hasRole('ROLE_ADMINISTRADOR')" />
+        
+        <intercept-url pattern="/gerente/**" access="hasRole('ROLE_GERENTE')" />
+        
+        <intercept-url pattern="/usuario_final/**" access="hasRole('ROLE_USUARIO_FINAL')" />
         
         <form-login login-page="/login.xhtml" authentication-failure-url="/login.xhtml?authfailed=true" default-target-url="/XHTML/initialMenu.xhtml" always-use-default-target="false"  />
 			

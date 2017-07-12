@@ -8,17 +8,36 @@
      </h:head>
 	
 	<h:body>
-		<div id="container">
-				<ui:insert name="header">
-					 <ui:include src="/WEB-INF/facelets/header.jspx" />
-					 <ui:include src="/WEB-INF/facelets/menu.jspx" />
-				</ui:insert>
-			
-					<ui:insert name="body"/>
-			
-				<ui:insert name="footer">
-					 <ui:include src="/WEB-INF/facelets/footer.jspx" />
-				</ui:insert>
-		</div>
+			<div id="contenedor" class="row center-block container-fluid">
+		         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+					<header id="cabecera" class="row">
+						 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"/>
+				          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
+					          	<ui:insert name="header">
+										 <ui:include src="/WEB-INF/facelets/header.jspx" />
+								</ui:insert>			
+					          
+								<nav id="menu" class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								     <ui:insert name="nav">
+										 <ui:include src="/WEB-INF/facelets/menu.jspx" />
+									</ui:insert>	
+								</nav>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"/>
+					</header>
+					<section id="container">
+				                  <div class=" col-sm-1 col-md-2 col-lg-2" id="containerConizq"/>
+				                  <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8" id="containerCentro">
+				                  		<ui:insert name="body"/>
+				                  </div>
+				                  <div class="col-sm-2 col-md-2 col-lg-2" id="containerDerecho"/>
+				 	</section>
+				 	 <footer class="row" id="pies">
+				             	<ui:insert name="footer">
+									 <ui:include src="/WEB-INF/facelets/footer.jspx" />
+								</ui:insert>
+				         </footer>
+			   	</div>
+			 </div>
 	</h:body>
 </html>

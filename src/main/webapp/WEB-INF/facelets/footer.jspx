@@ -8,8 +8,8 @@
 		<body>
 			<f:view>
 				<ui:composition>
-					<div id="footer">
-						<a href="http://www.zathuracode.org">Powered by Zathuracode 5.2.0</a>
+					<div id="footer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<a href="http://localhost:8080/Reservappfinal/">RESERVAPP</a>
 					</div>
 				</ui:composition>
 			</f:view>

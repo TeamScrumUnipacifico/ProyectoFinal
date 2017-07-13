@@ -41,20 +41,42 @@
 										 <h:outputText value="#{establecimiento.codigoEstablecimiento}"/>
 										 </p:column>
 			                    																									
-										<p:column filterBy="#{establecimiento.correo}" sortBy="#{establecimiento.correo}" >
+										<p:column filterBy="#{establecimiento.nombre}" sortBy="#{establecimiento.nombre}" >
 										 <f:facet name="header">
-										<h:outputText value="Correo"/>
+										<h:outputText value="Nombre"/>
 										</f:facet>
-										 <h:outputText value="#{establecimiento.correo}"/>
+										 <h:outputText value="#{establecimiento.nombre}"/>
 										</p:column>   
-			                    									
+										
+										<p:column filterBy="#{establecimiento.nit}" sortBy="#{establecimiento.nit}" >
+										 <f:facet name="header">
+										<h:outputText value="Nit"/>
+										</f:facet>
+										 <h:outputText value="#{establecimiento.nit}"/>
+										</p:column>
+										
+										<p:column filterBy="#{establecimiento.telefono}" sortBy="#{establecimiento.telefono}" >
+										 <f:facet name="header">
+										<h:outputText value="Telefono"/>
+										</f:facet>
+										 <h:outputText value="#{establecimiento.telefono}"/>
+										</p:column>   
+										
 										<p:column filterBy="#{establecimiento.direccion}" sortBy="#{establecimiento.direccion}" >
 										 <f:facet name="header">
 										<h:outputText value="Direccion"/>
 										</f:facet>
 										 <h:outputText value="#{establecimiento.direccion}"/>
-										</p:column>   
-			                    									
+										</p:column>
+										
+										<p:column filterBy="#{establecimiento.mesas}" sortBy="#{establecimiento.mesas}" >
+										 <f:facet name="header">
+										<h:outputText value="Mesas"/>
+										</f:facet>
+										 <h:outputText value="#{establecimiento.mesas}"/>
+										</p:column>  
+										
+										 						
 										<p:column filterBy="#{establecimiento.latitud}" sortBy="#{establecimiento.latitud}" >
 										 <f:facet name="header">
 										<h:outputText value="Latitud"/>
@@ -69,33 +91,14 @@
 										 <h:outputText value="#{establecimiento.longitud}"/>
 										</p:column>   
 			                    									
-										<p:column filterBy="#{establecimiento.mesas}" sortBy="#{establecimiento.mesas}" >
+										 <p:column filterBy="#{establecimiento.correo}" sortBy="#{establecimiento.correo}" >
 										 <f:facet name="header">
-										<h:outputText value="Mesas"/>
+										<h:outputText value="Correo"/>
 										</f:facet>
-										 <h:outputText value="#{establecimiento.mesas}"/>
+										 <h:outputText value="#{establecimiento.correo}"/>
 										</p:column>   
-			                    									
-										<p:column filterBy="#{establecimiento.nit}" sortBy="#{establecimiento.nit}" >
-										 <f:facet name="header">
-										<h:outputText value="Nit"/>
-										</f:facet>
-										 <h:outputText value="#{establecimiento.nit}"/>
-										</p:column>   
-			                    									
-										<p:column filterBy="#{establecimiento.nombre}" sortBy="#{establecimiento.nombre}" >
-										 <f:facet name="header">
-										<h:outputText value="Nombre"/>
-										</f:facet>
-										 <h:outputText value="#{establecimiento.nombre}"/>
-										</p:column>   
-			                    									
-										<p:column filterBy="#{establecimiento.telefono}" sortBy="#{establecimiento.telefono}" >
-										 <f:facet name="header">
-										<h:outputText value="Telefono"/>
-										</f:facet>
-										 <h:outputText value="#{establecimiento.telefono}"/>
-										</p:column>   
+			                    			
+			                   
 			                    			                    
 								<p:column headerText="Options">
 									<p:commandButton id="btnEdit" icon="ui-icon-pencil"

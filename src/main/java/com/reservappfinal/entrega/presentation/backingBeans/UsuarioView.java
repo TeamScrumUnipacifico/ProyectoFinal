@@ -301,7 +301,7 @@ public class UsuarioView implements Serializable {
             String documento = FacesUtils.checkString(txtDocumento);
 
             entity.setApellido(FacesUtils.checkString(txtApellido));
-            entity.setContrasena(FacesUtils.checkString(txtContrasena));
+            entity.setContrasena(Utilities.convertirSHA256(FacesUtils.checkString(txtContrasena)));
             entity.setCorreo(FacesUtils.checkString(txtCorreo));
             entity.setDireccion(FacesUtils.checkString(txtDireccion));
             entity.setDocumento(documento);

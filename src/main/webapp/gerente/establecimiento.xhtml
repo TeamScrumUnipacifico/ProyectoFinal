@@ -36,10 +36,15 @@
 												 	<h:outputText id="msgCodigoEstablecimiento" value="CodigoEstablecimiento"/>
 						 	<p:inputText id="txtCodigoEstablecimiento" binding="#{establecimientoView.txtCodigoEstablecimiento}">
 						 		<p:ajax update="panelEstablecimiento,msg,panelBotones" listener="#{establecimientoView.listener_txtId}"/>
-						 	</p:inputText>	
-																		
+						 	</p:inputText>
+						 							<h:outputText id="msgNit" value=" Nit"/>
+							<p:inputText id="txtNit" disabled="true" binding="#{establecimientoView.txtNit}"/>
+													<h:outputText id="msgNombre" value=" Nombre"/>
+							<p:inputText id="txtNombre" disabled="true" binding="#{establecimientoView.txtNombre}"/>																		
 													<h:outputText id="msgCorreo" value=" Correo"/>
-							<p:inputText id="txtCorreo" disabled="true" binding="#{establecimientoView.txtCorreo}"/>
+							<p:inputText id="txtCorreo" disabled="true" binding="#{establecimientoView.txtCorreo}"/>													
+													<h:outputText id="msgTelefono" value=" Telefono"/>
+							<p:inputText id="txtTelefono" disabled="true" binding="#{establecimientoView.txtTelefono}"/>
 													<h:outputText id="msgDireccion" value=" Direccion"/>
 							<p:inputText id="txtDireccion" disabled="true" binding="#{establecimientoView.txtDireccion}"/>
 													<h:outputText id="msgLatitud" value=" Latitud"/>
@@ -48,13 +53,7 @@
 							<p:inputText id="txtLongitud" disabled="true" binding="#{establecimientoView.txtLongitud}"/>
 													<h:outputText id="msgMesas" value=" Mesas"/>
 							<p:inputText id="txtMesas" disabled="true" binding="#{establecimientoView.txtMesas}"/>
-													<h:outputText id="msgNit" value=" Nit"/>
-							<p:inputText id="txtNit" disabled="true" binding="#{establecimientoView.txtNit}"/>
-													<h:outputText id="msgNombre" value=" Nombre"/>
-							<p:inputText id="txtNombre" disabled="true" binding="#{establecimientoView.txtNombre}"/>
-													<h:outputText id="msgTelefono" value=" Telefono"/>
-							<p:inputText id="txtTelefono" disabled="true" binding="#{establecimientoView.txtTelefono}"/>
-												
+																									
 										   </h:panelGrid>
 				</p:panel>
 	   			<p:panel id="panelBotones">

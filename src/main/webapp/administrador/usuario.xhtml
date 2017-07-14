@@ -28,7 +28,7 @@
 					</p:dialog>
 			
 			
-			<h:form id="formDialog">
+			<h:form id="formDialog" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<p:messages id="msg" />
 				<p:growl id="men"/>
 					<p:panel id="panelUsuario" header="Usuario">							
@@ -44,26 +44,27 @@
 													<h:outputText id="msgCorreo" value=" Correo"/>
 							<p:inputText id="txtCorreo" disabled="true" binding="#{usuarioView.txtCorreo}"/>
 													<h:outputText id="msgContrasena" value=" Contrasena"/>
-							<p:inputText id="txtContrasena" disabled="true" binding="#{usuarioView.txtContrasena}"/>
+							<p:inputText id="txtContrasena" type="password" disabled="true" binding="#{usuarioView.txtContrasena}"/>
 													<h:outputText id="msgDireccion" value=" Direccion"/>
 							<p:inputText id="txtDireccion" disabled="true" binding="#{usuarioView.txtDireccion}"/>
 													<h:outputText id="msgSexo" value=" Sexo"/>
 							<p:inputText id="txtSexo" disabled="true" binding="#{usuarioView.txtSexo}"/>
 													<h:outputText id="msgTelefono" value=" Telefono"/>
 							<p:inputText id="txtTelefono" disabled="true" binding="#{usuarioView.txtTelefono}"/>
-													<h:outputText id="msgCodigodelRol_Rol" value=" CodigodelRol_Rol"/>
+													<h:outputText id="msgCodigodelRol_Rol" value=" Codigo del rol"/>
 							<p:inputText id="txtCodigodelRol_Rol" disabled="true" binding="#{usuarioView.txtCodigodelRol_Rol}"/>
 												
 										   </h:panelGrid>
 				</p:panel>
 	   			<p:panel id="panelBotones">
-					<div align="center">					
+					<div align="center" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">					
 						<p:commandButton id="btnSave" binding="#{usuarioView.btnSave}" disabled="true" value="Save" action="#{usuarioView.action_save()}" update="panelUsuario,msg,panelBotones" />
 						<p:commandButton id="btnDelete" binding="#{usuarioView.btnDelete}" disabled="true" value="Delete" action="#{usuarioView.action_delete_master()}" onclick="if(!confirm('Do you really want to delete this Entry?')){return false;}" update="panelUsuario,msg,panelBotones" />
 						<p:commandButton id="btnClear" value="Clear" action="#{usuarioView.action_clear()}" update="panelUsuario,msg,panelBotones" />
 					</div>
 				</p:panel>			
 			</h:form>
+			
 		</f:view>
 			</ui:define>		
 		</ui:composition>	

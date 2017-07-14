@@ -114,10 +114,6 @@ public class Usuario  implements java.io.Serializable {
     public void setReservas(Set<Reserva> reservas) {
         this.reservas = reservas;
     }
-
-
-
-
 }
 
 

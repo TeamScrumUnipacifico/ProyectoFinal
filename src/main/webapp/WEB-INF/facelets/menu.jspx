@@ -8,20 +8,21 @@
    
    <html>
 		<body>
+			<div align="center">
 			<f:view>
 				<ui:composition>
 					<!-- Beging Menu -->
 				
 							<h:form>
 							
-								<p:megaMenu style="width:989px">  
-									<p:submenu label="Master" icon="ui-icon-pencil">  
+								<p:megaMenu class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+									<p:submenu label="Administrador" icon="ui-icon-pencil">  
 							            <p:column>
 							            
 							            	 								            	 <p:submenu label="Establecimiento">  
 								                    <p:menuitem value="Establecimiento" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/establecimiento.xhtml" />  
 								               	 </p:submenu>
-											 								            	 <p:submenu label="Factura">  
+											 		<!-- 					            	 <p:submenu label="Factura">  
 								                    <p:menuitem value="Factura" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/factura.xhtml" />  
 								               	 </p:submenu>
 											 								            	 <p:submenu label="Menu">  
@@ -36,6 +37,7 @@
 											 								            	 <p:submenu label="Reserva">  
 								                    <p:menuitem value="Reserva" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/reserva.xhtml" />  
 								               	 </p:submenu>
+								               	  -->
 											 								            	 <p:submenu label="Rol">  
 								                    <p:menuitem value="Rol" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/rol.xhtml" />  
 								               	 </p:submenu>
@@ -52,7 +54,7 @@
 							                								            	 <p:submenu label="Establecimiento">  
 								                    <p:menuitem value="Establecimiento" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/establecimientoListDataTable.xhtml" />  
 								               	 </p:submenu>
-											 								            	 <p:submenu label="Factura">  
+											 		<!--					            	 <p:submenu label="Factura">  
 								                    <p:menuitem value="Factura" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/facturaListDataTable.xhtml" />  
 								               	 </p:submenu>
 											 								            	 <p:submenu label="Menu">  
@@ -67,6 +69,7 @@
 											 								            	 <p:submenu label="Reserva">  
 								                    <p:menuitem value="Reserva" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/reservaListDataTable.xhtml" />  
 								               	 </p:submenu>
+								               	 -->
 											 								            	 <p:submenu label="Rol">  
 								                    <p:menuitem value="Rol" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/rolListDataTable.xhtml" />  
 								               	 </p:submenu>
@@ -79,11 +82,12 @@
 							        
 							  
 							  
-							        <p:submenu label="Edit Data Table" icon="ui-icon-contact">  
+							        <p:submenu label="Editar Data Table" icon="ui-icon-contact">  
 							            <p:column>  
 							                								            	 <p:submenu label="Establecimiento">  
 								                    <p:menuitem value="Establecimiento" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/establecimientoListDataTableEditable.xhtml" />  
 								               	 </p:submenu>
+								               	 <!--
 											 								            	 <p:submenu label="Factura">  
 								                    <p:menuitem value="Factura" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/facturaListDataTableEditable.xhtml" />  
 								               	 </p:submenu>
@@ -99,6 +103,7 @@
 											 								            	 <p:submenu label="Reserva">  
 								                    <p:menuitem value="Reserva" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/reservaListDataTableEditable.xhtml" />  
 								               	 </p:submenu>
+								               	 -->
 											 								            	 <p:submenu label="Rol">  
 								                    <p:menuitem value="Rol" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/administrador/rolListDataTableEditable.xhtml" />  
 								               	 </p:submenu>
@@ -116,7 +121,7 @@
 								        </p:column>        	 
 						  			</p:submenu>
 						  			
-						        	<p:menuitem value="Quit" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/index.jsp" icon="ui-icon-close" />  
+						        	<p:menuitem value="Salir" url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/index.jsp" icon="ui-icon-close" />  
 						    
 						    </p:megaMenu>  
 						</h:form>
@@ -124,6 +129,7 @@
 					<!-- end menu -->
 				</ui:composition>
 			</f:view>
+			</div>
 		</body>
 	</html>
 </jsp:root>

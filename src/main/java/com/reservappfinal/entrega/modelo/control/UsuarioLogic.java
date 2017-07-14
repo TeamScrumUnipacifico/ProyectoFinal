@@ -66,7 +66,7 @@ public class UsuarioLogic implements IUsuarioLogic {
 		if(usuarios==null){
 			throw new Exception(MENSAJE);
 		}
-		if(usuarios.getContrasena().equals(usuClave)==false){
+		if(usuarios.getContrasena().equals(Utilities.convertirSHA256(usuClave))==false){
 			throw new Exception(MENSAJE);
 		}
 		usuarios.getRol().getRolNombre();
@@ -113,7 +113,7 @@ public class UsuarioLogic implements IUsuarioLogic {
 
             if ((entity.getContrasena() != null) &&
                     (Utilities.checkWordAndCheckWithlength(
-                        entity.getContrasena(), 45) == false)) {
+                        entity.getContrasena(), 100) == false)) {
                 throw new ZMessManager().new NotValidFormatException(
                     "contrasena");
             }
@@ -239,7 +239,7 @@ public class UsuarioLogic implements IUsuarioLogic {
 
             if ((entity.getContrasena() != null) &&
                     (Utilities.checkWordAndCheckWithlength(
-                        entity.getContrasena(), 45) == false)) {
+                        entity.getContrasena(), 100) == false)) {
                 throw new ZMessManager().new NotValidFormatException(
                     "contrasena");
             }

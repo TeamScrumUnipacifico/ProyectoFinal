@@ -39,6 +39,7 @@ import javax.annotation.Resource;
  *
  * @see lidis.Establecimiento
  */
+@SuppressWarnings({ "unused", "deprecation" })
 @Scope("singleton")
 @Repository("EstablecimientoDAO")
 public class EstablecimientoDAO extends HibernateDaoImpl<Establecimiento, Integer>

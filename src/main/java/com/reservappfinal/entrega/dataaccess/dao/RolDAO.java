@@ -1,32 +1,16 @@
 package com.reservappfinal.entrega.dataaccess.dao;
 
-import com.reservappfinal.entrega.dataaccess.api.HibernateDaoImpl;
-import com.reservappfinal.entrega.modelo.Rol;
+import javax.annotation.Resource;
 
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-
-import org.hibernate.criterion.Example;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
-
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-
-import javax.annotation.Resource;
+import com.reservappfinal.entrega.dataaccess.api.HibernateDaoImpl;
+import com.reservappfinal.entrega.modelo.Rol;
 
 
 /**
@@ -42,7 +26,8 @@ import javax.annotation.Resource;
 @Scope("singleton")
 @Repository("RolDAO")
 public class RolDAO extends HibernateDaoImpl<Rol, Integer> implements IRolDAO {
-    private static final Logger log = LoggerFactory.getLogger(RolDAO.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(RolDAO.class);
     @Resource
     private SessionFactory sessionFactory;
 

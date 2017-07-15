@@ -57,6 +57,7 @@ import com.reservappfinal.entrega.exceptions.ZMessManager;
 /**
  * JSF utilities.
  */
+@SuppressWarnings("deprecation")
 public class FacesUtils {
 	/**
 	 * Get servlet context.
@@ -205,11 +206,13 @@ public class FacesUtils {
 		return getApplication().createValueBinding(el);
 	}
 
+	@SuppressWarnings("unused")
 	private static HttpServletRequest getServletRequest() {
 		return (HttpServletRequest) FacesContext.getCurrentInstance()
 				.getExternalContext().getRequest();
 	}
 
+	@SuppressWarnings("unused")
 	private static Object getElValue(String el) {
 		return getValueBinding(el).getValue(FacesContext.getCurrentInstance());
 	}

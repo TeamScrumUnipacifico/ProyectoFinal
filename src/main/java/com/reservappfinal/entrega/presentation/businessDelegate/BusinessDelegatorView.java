@@ -1,5 +1,13 @@
 package com.reservappfinal.entrega.presentation.businessDelegate;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
 import com.reservappfinal.entrega.modelo.Establecimiento;
 import com.reservappfinal.entrega.modelo.Factura;
 import com.reservappfinal.entrega.modelo.Menu;
@@ -8,8 +16,6 @@ import com.reservappfinal.entrega.modelo.Orden;
 import com.reservappfinal.entrega.modelo.Reserva;
 import com.reservappfinal.entrega.modelo.Rol;
 import com.reservappfinal.entrega.modelo.Usuario;
-import com.reservappfinal.entrega.modelo.control.EstablecimientoLogic;
-import com.reservappfinal.entrega.modelo.control.FacturaLogic;
 import com.reservappfinal.entrega.modelo.control.IEstablecimientoLogic;
 import com.reservappfinal.entrega.modelo.control.IFacturaLogic;
 import com.reservappfinal.entrega.modelo.control.IMenuLogic;
@@ -18,12 +24,6 @@ import com.reservappfinal.entrega.modelo.control.IOrdenLogic;
 import com.reservappfinal.entrega.modelo.control.IReservaLogic;
 import com.reservappfinal.entrega.modelo.control.IRolLogic;
 import com.reservappfinal.entrega.modelo.control.IUsuarioLogic;
-import com.reservappfinal.entrega.modelo.control.MenuLogic;
-import com.reservappfinal.entrega.modelo.control.MesaLogic;
-import com.reservappfinal.entrega.modelo.control.OrdenLogic;
-import com.reservappfinal.entrega.modelo.control.ReservaLogic;
-import com.reservappfinal.entrega.modelo.control.RolLogic;
-import com.reservappfinal.entrega.modelo.control.UsuarioLogic;
 import com.reservappfinal.entrega.modelo.dto.EstablecimientoDTO;
 import com.reservappfinal.entrega.modelo.dto.FacturaDTO;
 import com.reservappfinal.entrega.modelo.dto.MenuDTO;
@@ -32,24 +32,6 @@ import com.reservappfinal.entrega.modelo.dto.OrdenDTO;
 import com.reservappfinal.entrega.modelo.dto.ReservaDTO;
 import com.reservappfinal.entrega.modelo.dto.RolDTO;
 import com.reservappfinal.entrega.modelo.dto.UsuarioDTO;
-import com.reservappfinal.entrega.presentation.businessDelegate.IBusinessDelegatorView;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.context.annotation.Scope;
-
-import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
-
-import java.sql.*;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -96,7 +78,8 @@ import java.util.Set;
 @Scope("singleton")
 @Service("BusinessDelegatorView")
 public class BusinessDelegatorView implements IBusinessDelegatorView {
-    private static final Logger log = LoggerFactory.getLogger(BusinessDelegatorView.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(BusinessDelegatorView.class);
     @Autowired
     private IEstablecimientoLogic establecimientoLogic;
     @Autowired

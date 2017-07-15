@@ -12,8 +12,23 @@ public class UsuarioLogicTest {
 	
 	@Test
 	public void testValidarUsuario() {
+		Usuario usuario = new Usuario();
+		Rol rol = new Rol();
+		
+		usuario.setNombre("Pepe");
+		usuario.setApellido("Perez");
+		usuario.setContrasena("123456");
+		usuario.setCorreo("Perez@gmail.com");
+		usuario.setDireccion("Cr 5 No. 3a-3");
+		usuario.setDocumento("21324254");
+		usuario.setSexo("Masculino");
+		usuario.setTelefono("314234567");
+		usuario.setRol(rol);
+		assertNotNull(usuario);
+		
 		try {
-			usuarioLogic.validarUsuario("ok", "ok");
+			usuarioLogic.validarUsuario(usuario.getCorreo(), usuario.getContrasena());
+			assertNull(usuarioLogic);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

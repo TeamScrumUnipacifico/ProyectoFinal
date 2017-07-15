@@ -1,13 +1,9 @@
 package com.reservappfinal.entrega.modelo.dto;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
 
-import java.sql.*;
-
-import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -18,7 +14,8 @@ import java.util.Date;
 */
 public class OrdenDTO implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Logger log = LoggerFactory.getLogger(OrdenDTO.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(OrdenDTO.class);
     private Integer codigoOrden;
     private String descripcion;
     private Integer estado;

@@ -1,13 +1,9 @@
 package com.reservappfinal.entrega.modelo.dto;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
 
-import java.sql.*;
-
-import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -18,7 +14,8 @@ import java.util.Date;
 */
 public class FacturaDTO implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Logger log = LoggerFactory.getLogger(FacturaDTO.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(FacturaDTO.class);
     private Integer codigoFactura;
     private String estadoPago;
     private String metodoPago;

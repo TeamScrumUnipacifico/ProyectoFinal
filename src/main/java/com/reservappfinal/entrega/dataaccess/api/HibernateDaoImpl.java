@@ -1,32 +1,20 @@
 package com.reservappfinal.entrega.dataaccess.api;
 
-import org.hibernate.Criteria;
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.Collection;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
-
-import java.io.Serializable;
-
-import java.lang.reflect.ParameterizedType;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.StringTokenizer;
 
 
 /**
@@ -38,7 +26,7 @@ import java.util.StringTokenizer;
  *
  */
 @SuppressWarnings({"unchecked",
-    "rawtypes"
+    "rawtypes", "deprecation"
 })
 public class HibernateDaoImpl<T, PK extends Serializable> implements Dao<T, PK> {
     @Autowired

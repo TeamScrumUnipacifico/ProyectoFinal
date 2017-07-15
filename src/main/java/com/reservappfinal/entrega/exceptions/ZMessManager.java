@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 public class ZMessManager extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 	
+	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(ZMessManager.class);
 
 	public final static String ALL = "All ";

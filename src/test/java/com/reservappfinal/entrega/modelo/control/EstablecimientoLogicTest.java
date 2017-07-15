@@ -38,6 +38,13 @@ public class EstablecimientoLogicTest {
 	
 	@Test
 	public void testSetDataEstablecimiento(){
+		EstablecimientoLogic esta=new EstablecimientoLogic();
+		try {
+			esta.getDataEstablecimiento();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

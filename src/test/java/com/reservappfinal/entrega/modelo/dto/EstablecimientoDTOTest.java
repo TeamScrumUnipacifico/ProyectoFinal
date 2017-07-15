@@ -28,6 +28,7 @@ public class EstablecimientoDTOTest {
 		establ.setLatitud("567");
 		establ.setMesas(10);
 		establ.setTelefono("2597");
+		assertNotNull(establ);
 		
 		String numeroEstablecimiento=""+establ.getCodigoEstablecimiento();
 		String mesas=""+establ.getMesas();

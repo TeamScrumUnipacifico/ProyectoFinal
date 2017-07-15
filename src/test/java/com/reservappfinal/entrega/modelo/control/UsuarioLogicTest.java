@@ -35,6 +35,7 @@ public class UsuarioLogicTest {
 		usuario.setSexo("Masculino");
 		usuario.setTelefono("314234567");
 		usuario.setRol(rol);
+		assertNotNull(usuario);
 		
 		try {
 			usuarioLogic.saveUsuario(usuario);

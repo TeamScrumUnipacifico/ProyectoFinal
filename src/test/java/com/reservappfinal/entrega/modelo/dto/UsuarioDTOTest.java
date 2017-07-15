@@ -29,6 +29,7 @@ public class UsuarioDTOTest {
 		usuarioDTO.setSexo("Masculino");
 		usuarioDTO.setTelefono("314234567");
 		usuarioDTO.setCodigodelRol_Rol(1);
+		assertNotNull(usuarioDTO);
 		
         assertEquals( usuarioDTO.getNombre(), "Pepe");
         assertEquals( usuarioDTO.getApellido(), "Perez");

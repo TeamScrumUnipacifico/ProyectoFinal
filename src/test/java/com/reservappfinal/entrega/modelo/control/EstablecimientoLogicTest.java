@@ -1,5 +1,7 @@
 package com.reservappfinal.entrega.modelo.control;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 import com.reservappfinal.entrega.modelo.Establecimiento;
 
@@ -19,6 +21,7 @@ public class EstablecimientoLogicTest {
 		estable.setNit("11");
 		estable.setNombre("nombre al");
 		estable.setTelefono("318095866");
+		assertNotNull(estable);
 		
 		EstablecimientoLogic esta=new EstablecimientoLogic();
 		try {

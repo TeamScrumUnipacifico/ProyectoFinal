@@ -1,39 +1,25 @@
 package com.reservappfinal.entrega.presentation.backingBeans;
 
-import com.reservappfinal.entrega.exceptions.*;
-import com.reservappfinal.entrega.modelo.*;
-import com.reservappfinal.entrega.modelo.dto.MesaDTO;
-import com.reservappfinal.entrega.presentation.businessDelegate.*;
-import com.reservappfinal.entrega.utilities.*;
-
-import org.primefaces.component.calendar.*;
-import org.primefaces.component.commandbutton.CommandButton;
-import org.primefaces.component.inputtext.InputText;
-
-import org.primefaces.event.RowEditEvent;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
-
-import java.sql.*;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.TimeZone;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+
+import org.primefaces.component.commandbutton.CommandButton;
+import org.primefaces.component.inputtext.InputText;
+import org.primefaces.event.RowEditEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.reservappfinal.entrega.exceptions.ZMessManager;
+import com.reservappfinal.entrega.modelo.Mesa;
+import com.reservappfinal.entrega.modelo.dto.MesaDTO;
+import com.reservappfinal.entrega.presentation.businessDelegate.IBusinessDelegatorView;
+import com.reservappfinal.entrega.utilities.FacesUtils;
 
 
 /**
@@ -45,7 +31,8 @@ import javax.faces.event.ActionEvent;
 @ViewScoped
 public class MesaView implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Logger log = LoggerFactory.getLogger(MesaView.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(MesaView.class);
     private InputText txtEstado;
     private InputText txtPuestos;
     private InputText txtUbicacion;
